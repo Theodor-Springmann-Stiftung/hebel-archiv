@@ -133,9 +133,7 @@ const ausstellungPage = defineCollection({
     }),
     badge: z.object({
       label: z.string(),
-      preposition: z.string(),
-      date: z.string(),
-      year: z.string(),
+      status: z.string(),
     }),
   }),
 });
