@@ -13,17 +13,21 @@ if (!siteContent) {
 }
 
 const base = import.meta.env.BASE_URL;
-const toBasePath = (pathname: string) => {
-  if (pathname === "/") {
+const toHref = (href: string) => {
+  if (/^https?:\/\//.test(href)) {
+    return href;
+  }
+
+  if (href === "/") {
     return base;
   }
 
-  return `${base}${pathname.slice(1)}`;
+  return `${base}${href.slice(1)}`;
 };
 
 const items = siteContent.data.nav.items.map((item) => ({
   ...item,
-  href: toBasePath(item.href),
+  href: toHref(item.href),
 }));
 ---
 
