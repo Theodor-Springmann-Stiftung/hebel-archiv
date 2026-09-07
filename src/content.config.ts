@@ -111,6 +111,7 @@ const tagungPage = defineCollection({
             time: z.string(),
             name: z.string().optional(),
             title: z.string(),
+            note: z.string().optional(),
           }),
         ),
       }),
